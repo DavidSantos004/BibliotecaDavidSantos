@@ -34,19 +34,20 @@ public class Biblioteca implements Administracion{
         System.out.println("2. Añadir un libro o revista");
         System.out.println("3. Pedir un prestamo");
         System.out.println("4. Buscar libro o revista por su titulo"); 
-        System.out.println(opcion);
-        
         
     }
     
     @Override
     public void recursosDisponibles() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("Categorias:");
+        for(Recurso recurso : inventario.values()){
+            System.out.println("");
+        }
     }
 
     public void añadirRecurso(Recurso recurso) {
         if(!inventario.containsKey(recurso.getId())){
-            
+            inventario.put(recurso.getId(), recurso);
         }else{
             System.out.println("ya existe un producto con este id");
         }
